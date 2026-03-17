@@ -29,6 +29,12 @@ const initContactForm = () => {
     const hasError = Boolean(message);
     field.classList.toggle("is-invalid", hasError);
     field.setAttribute("aria-invalid", hasError ? "true" : "false");
+
+    if (hasError) {
+      errorNode.setAttribute("role", "alert");
+    } else {
+      errorNode.removeAttribute("role");
+    }
   };
 
   const validateField = (fieldName) => {
@@ -36,6 +42,7 @@ const initContactForm = () => {
     if (!field) return true;
 
     const value = field.value.trim();
+    field.value = value;
 
     if (!value) {
       setFieldError(fieldName, "This field is required.");
@@ -91,6 +98,7 @@ const initContactForm = () => {
 const initActiveNavLinks = () => {
   const navLinks = Array.from(document.querySelectorAll('.navbar .nav-link[href^="#"]'));
   if (navLinks.length === 0) return;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const navTargets = navLinks
     .map((link) => {
@@ -147,7 +155,10 @@ const initActiveNavLinks = () => {
   navTargets.forEach(({ link, targetId, section }) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      section.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "start",
+      });
       history.replaceState(null, "", `#${targetId}`);
       setActiveLink(targetId);
     });
