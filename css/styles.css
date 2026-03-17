@@ -38,6 +38,39 @@ body {
   border-radius: 0.75rem;
 }
 
+.project-card {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #b8cadb;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
+.project-card:focus-within {
+  transform: translateY(-4px);
+  border-color: #9db6d0;
+  box-shadow: 0 0 0 3px rgba(11, 94, 215, 0.2);
+}
+
+.tech-badge {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid #c4d3e2;
+  background-color: #f1f6fb;
+  color: #244a73;
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.project-link {
+  font-weight: 600;
+}
+
 p,
 .nav-link {
   color: var(--color-muted);
