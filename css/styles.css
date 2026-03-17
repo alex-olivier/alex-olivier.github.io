@@ -1,0 +1,86 @@
+:root {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-alt: #eaf0f5;
+  --color-text: #1f2937;
+  --color-muted: #4b5563;
+  --color-accent: #0b5ed7;
+  --color-accent-dark: #084298;
+  --focus-ring: #ffbf47;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.hero {
+  background: linear-gradient(135deg, #eef4fb 0%, #f7fbff 55%, #ffffff 100%);
+}
+
+.section-alt {
+  background-color: var(--color-alt);
+}
+
+p,
+.nav-link {
+  color: var(--color-muted);
+}
+
+.navbar-brand,
+h1,
+h2 {
+  color: var(--color-text);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 1000;
+  background: #111827;
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+.nav-link:focus-visible,
+.btn:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+footer {
+  background-color: var(--color-surface);
+}
+
+@media (min-width: 992px) {
+  .py-lg-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
