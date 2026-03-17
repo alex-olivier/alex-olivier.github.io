@@ -260,21 +260,90 @@
 
       <section id="contact" class="py-5 section-alt" aria-labelledby="contact-title">
         <div class="container">
-          <h2 id="contact-title" class="h3 mb-3">Contact</h2>
-          <div class="content-card p-4">
-            <address class="mb-3">
-              <p class="mb-2">
-                <span class="fw-semibold">Email:</span>
-                <a href="mailto:alex.olivier@pcc.edu">alex.olivier@pcc.edu</a>
-              </p>
-              <p class="mb-0">
-                <span class="fw-semibold">Phone:</span>
-                <a href="tel:+9715555555">+971-555-5555</a>
-              </p>
-            </address>
-            <p class="mb-0 small text-body-secondary">
-              A contact form will be added in a future update.
-            </p>
+          <h2 id="contact-title" class="h3 mb-4">Contact</h2>
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <article class="content-card h-100 p-4">
+                <h3 class="h5 mb-3">Contact Details</h3>
+                <address class="mb-3">
+                  <p class="mb-2">
+                    <span class="fw-semibold">Email:</span>
+                    <a href="mailto:alex.olivier@pcc.edu">alex.olivier@pcc.edu</a>
+                  </p>
+                  <p class="mb-0">
+                    <span class="fw-semibold">Phone:</span>
+                    <a href="tel:+9715555555">+971-555-5555</a>
+                  </p>
+                </address>
+                <p class="mb-0 small text-body-secondary">
+                  Use this form for inquiries. Submissions are validated locally only in this
+                  version.
+                </p>
+              </article>
+            </div>
+            <div class="col-lg-8">
+              <article class="content-card p-4">
+                <h3 class="h5 mb-3">Send a Message</h3>
+                <form id="contact-form" class="contact-form" novalidate aria-describedby="contact-form-status">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="name">Name</label>
+                      <input
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        type="text"
+                        autocomplete="name"
+                        required
+                        aria-describedby="name-error"
+                      />
+                      <p class="form-error mt-1 mb-0" id="name-error" aria-live="polite"></p>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="email">Email</label>
+                      <input
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        required
+                        aria-describedby="email-error"
+                      />
+                      <p class="form-error mt-1 mb-0" id="email-error" aria-live="polite"></p>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="subject">Subject</label>
+                      <input
+                        class="form-control"
+                        id="subject"
+                        name="subject"
+                        type="text"
+                        required
+                        aria-describedby="subject-error"
+                      />
+                      <p class="form-error mt-1 mb-0" id="subject-error" aria-live="polite"></p>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="message">Message</label>
+                      <textarea
+                        class="form-control"
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                        aria-describedby="message-error"
+                      ></textarea>
+                      <p class="form-error mt-1 mb-0" id="message-error" aria-live="polite"></p>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary" type="submit">Submit Message</button>
+                    </div>
+                  </div>
+                </form>
+                <p id="contact-form-status" class="form-status mt-3 mb-0" aria-live="polite"></p>
+              </article>
+            </div>
           </div>
         </div>
       </section>

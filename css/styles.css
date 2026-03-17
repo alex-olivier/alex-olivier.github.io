@@ -71,6 +71,47 @@ body {
   font-weight: 600;
 }
 
+.navbar .nav-link.active {
+  color: var(--color-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35rem;
+}
+
+.contact-form .form-label {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.contact-form .form-control {
+  border-color: #cbd5df;
+}
+
+.contact-form .form-control:focus {
+  border-color: #92b4da;
+  box-shadow: 0 0 0 0.2rem rgba(11, 94, 215, 0.15);
+}
+
+.form-error {
+  min-height: 1.25rem;
+  color: #b42318;
+  font-size: 0.875rem;
+}
+
+.form-status {
+  min-height: 1.5rem;
+  font-weight: 600;
+}
+
+.form-status.is-error {
+  color: #842029;
+}
+
+.form-status.is-success {
+  color: #0f5132;
+}
+
 p,
 .nav-link {
   color: var(--color-muted);
