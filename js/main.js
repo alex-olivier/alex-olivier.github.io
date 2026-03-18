@@ -77,10 +77,15 @@ const initContactForm = () => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const invalidFields = fieldNames.filter((fieldName) => !validateField(fieldName));
+    const invalidFields = fieldNames.filter(
+      (fieldName) => !validateField(fieldName),
+    );
 
     if (invalidFields.length > 0) {
-      setStatus("Please correct the highlighted fields and try again.", "error");
+      setStatus(
+        "Please correct the highlighted fields and try again.",
+        "error",
+      );
       const firstInvalidField = form.elements[invalidFields[0]];
       if (firstInvalidField) {
         firstInvalidField.focus();
@@ -96,9 +101,13 @@ const initContactForm = () => {
 };
 
 const initActiveNavLinks = () => {
-  const navLinks = Array.from(document.querySelectorAll('.navbar .nav-link[href^="#"]'));
+  const navLinks = Array.from(
+    document.querySelectorAll('.navbar .nav-link[href^="#"]'),
+  );
   if (navLinks.length === 0) return;
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   const navTargets = navLinks
     .map((link) => {
@@ -123,19 +132,29 @@ const initActiveNavLinks = () => {
     });
   };
 
-  const visibleRatios = new Map(navTargets.map(({ targetId }) => [targetId, 0]));
+  const visibleRatios = new Map(
+    navTargets.map(({ targetId }) => [targetId, 0]),
+  );
   const hashTargetId = window.location.hash.replace("#", "");
-  const hasHashTarget = navTargets.some(({ targetId }) => targetId === hashTargetId);
+  const hasHashTarget = navTargets.some(
+    ({ targetId }) => targetId === hashTargetId,
+  );
   setActiveLink(hasHashTarget ? hashTargetId : navTargets[0].targetId);
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        visibleRatios.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
+        visibleRatios.set(
+          entry.target.id,
+          entry.isIntersecting ? entry.intersectionRatio : 0,
+        );
       });
 
-      const [mostVisibleId, highestRatio] = Array.from(visibleRatios.entries()).reduce(
-        (currentBest, candidate) => (candidate[1] > currentBest[1] ? candidate : currentBest),
+      const [mostVisibleId, highestRatio] = Array.from(
+        visibleRatios.entries(),
+      ).reduce(
+        (currentBest, candidate) =>
+          candidate[1] > currentBest[1] ? candidate : currentBest,
         ["", 0],
       );
 
